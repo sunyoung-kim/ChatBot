@@ -13,13 +13,13 @@ import javax.swing.*;
 public class ChatBotGUI extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private static final String newline = "\n";
 	
 	private JLabel GUITitle;
 	private JTextArea textArea;
 	private JTextField textField;
 	
 	private static ChatBotGUI cbGUI;
+	ChatBot cb = new ChatBot();
 
 	public ChatBotGUI() {
 		JFrame frame = new JFrame("Chat Bot");
@@ -51,7 +51,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		textField.addKeyListener(new KeyListener() {
 			public void keyPressed(KeyEvent ke) {
 				if(ke.getKeyChar() == KeyEvent.VK_ENTER){
-					printTextField(textField.getText());
+					printTextField(cb.printOutput(textField.getText()));
 				}
 			}
 			public void keyReleased(KeyEvent arg0) {
@@ -67,7 +67,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 	}
 	
 	public void printTextField(String text) {
-		textArea.setText(textArea.getText() + text + newline);
+		textArea.setText(textArea.getText() + text);
 		textField.setText(null);
 	}
 

@@ -8,15 +8,22 @@ import java.util.*;
 
 public class ChatBot {
 	
-	private String input;
+	private static final String newline = "\n";
 	private String output;
 	
 	public ChatBot() {
 		
 	}
 	
-	public String printOutput() {
+	public String printOutput(String in) {
+		output = "You > " + in.toLowerCase() + newline
+				+ "ChatBot > " + getOutput(in) + newline;
 		
+		return output;
+	}
+	
+	public String getOutput(String in) {
+		output = in.toUpperCase();
 		return output;
 	}
 	

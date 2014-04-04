@@ -51,7 +51,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		textField.addKeyListener(new KeyListener() {
 			public void keyPressed(KeyEvent ke) {
 				if(ke.getKeyChar() == KeyEvent.VK_ENTER){
-					printTextField(cb.printOutput(textField.getText()));
+					printTextField(cb.print(textField.getText()));
 				}
 			}
 			public void keyReleased(KeyEvent arg0) {

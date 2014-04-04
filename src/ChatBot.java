@@ -11,22 +11,28 @@ import java.io.*;
 public class ChatBot {
 	
 	private static final String newline = "\n";
-	private String output;
+	private List<String> userInput;
 	
 	public ChatBot() {
 		
 	}
 	
-	public String printOutput(String in) {
-		output = "You > " + in.toLowerCase() + newline
-				+ "ChatBot > " + getOutput(in) + newline;
+	public void setUserInput(String s) {
 		
-		return output;
+		userInput.add(s);
 	}
 	
-	public String getOutput(String in) {
-		output = in.toUpperCase();
-		return output;
+	public List<String> getUserInput() {
+		return userInput;
+	}
+	
+	// TODO: get the result and print
+	public String print(String in) {
+		String out;
+		out = "You > " + in.toLowerCase() + newline
+				+ "ChatBot > " + in.toUpperCase() + newline;
+				
+		return out;
 	}
 	
 	public static void main(String[] args) throws IOException {

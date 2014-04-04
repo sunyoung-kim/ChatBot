@@ -18,7 +18,6 @@ public class ChatBot {
 	}
 	
 	public void setUserInput(String s) {
-		
 		userInput.add(s);
 	}
 	
@@ -35,6 +34,16 @@ public class ChatBot {
 		return out;
 	}
 	
+	public static void tokenizedResult(String in) {
+		int start = in.indexOf("<div");
+		int end = in.indexOf(">");
+		
+		if(start > 0)
+			System.out.println("Start: " + start);
+		if(end > 0)
+			System.out.println("End: " + end);
+	}
+	
 	public static void main(String[] args) throws IOException {
 		
 		// TODO: Find the wiki doc url from user input
@@ -46,8 +55,10 @@ public class ChatBot {
 		while((inputLine = in.readLine()) != null) {
 			
 			// TODO: Tokenize the user input to find the keywords
-			if(inputLine.contains("div"))
+			if(inputLine.contains("Thaddeus Stevens")) {
+				//tokenizedResult(inputLine);
 				System.out.println("\t" + inputLine);
+			}
 		}
 		in.close();
 		

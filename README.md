@@ -1,6 +1,8 @@
-Grand Valley State University
-Computer Science
+<h1>ChatBot</h1>
+<h4>Grand Valley State University</h4>
 
-Winter 2014
+<p>Winter 2014
+<br/>
 CIS 365 - Artificial Intelligence
-SunYoung Kim, Thomas Sniadecki
+<br/>
+SunYoung Kim, Thomas Sniadecki</p>

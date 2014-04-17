@@ -1,3 +1,5 @@
+package ChatBot;
+
 /*
  * Winter 2014
  * CIS 365 Artificial Intelligence
@@ -17,6 +19,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 	private JLabel GUITitle;
 	private JTextArea textArea;
 	private JTextField textField;
+	private JScrollPane scrollPane;
 	
 	private static ChatBotGUI cbGUI;
 	ChatBot cb = new ChatBot();
@@ -39,11 +42,12 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		panel.add(GUITitle);
 		
 		textArea = new JTextArea(15, 60);
+		scrollPane = new JScrollPane(textArea); 
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 		
 		textArea.setBackground(Color.lightGray);
-		panel.add(textArea);
+		panel.add(scrollPane);
 		
 		textField = new JTextField(60);
 		textField.setEditable(true);

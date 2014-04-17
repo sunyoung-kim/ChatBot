@@ -24,6 +24,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 	private static ChatBotGUI cbGUI;
 	ChatBot cb = new ChatBot();
 
+	// create ChatBot GUI
 	public ChatBotGUI() {
 		JFrame frame = new JFrame("Chat Bot");
 		
@@ -34,6 +35,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	// get panel with textarea and textfield
 	public JPanel createPanel() {
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.white);
@@ -70,6 +72,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		return panel;
 	}
 	
+	// appends textfield string to textarea
 	public void printTextField(String text) {
 		textArea.setText(textArea.getText() + text);
 		textField.setText(null);

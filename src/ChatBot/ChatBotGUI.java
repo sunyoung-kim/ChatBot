@@ -37,13 +37,17 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 	
 	// get panel with textarea and textfield
 	public JPanel createPanel() {
+		// generate JPanel
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.white);
 		
+		// add title for the program
 		GUITitle = new JLabel("Chat Bot");
 		panel.add(GUITitle);
 		
+		// add textArea for printing user's commands and responses
 		textArea = new JTextArea(15, 60);
+		// add scrollPane for textArea
 		scrollPane = new JScrollPane(textArea); 
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
@@ -51,9 +55,11 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		textArea.setBackground(Color.lightGray);
 		panel.add(scrollPane);
 		
+		// add textField for user to type in
 		textField = new JTextField(60);
 		textField.setEditable(true);
 		
+		// add action listener for pushing ENTER to the textfield
 		textField.addKeyListener(new KeyListener() {
 			public void keyPressed(KeyEvent ke) {
 				if(ke.getKeyChar() == KeyEvent.VK_ENTER){
@@ -78,7 +84,7 @@ public class ChatBotGUI extends JFrame implements ActionListener {
 		textField.setText(null);
 	}
 
-	
+	// call the ChatBotGUI
 	public static void main(String[] args) {
 		cbGUI = new ChatBotGUI();
 	}
